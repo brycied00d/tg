@@ -36,7 +36,7 @@ EXTRA_LIBS=""
 AX_CHECK_OPENSSL(,[AC_MSG_ERROR([No openssl found])])
 AX_CHECK_ZLIB(, [AC_MSG_ERROR([No zlib found])])
 
-AC_CHECK_LIB([readline], [rl_save_prompt], [ EXTRA_LIBS="${EXTRA_LIBS} -lreadline" ; ], [AC_MSG_ERROR([no libreadline found])])
+AC_CHECK_LIB([readline], [rl_save_prompt], [ EXTRA_LIBS="${EXTRA_LIBS} -lreadline -ltermcap" ; ], [AC_MSG_ERROR([no libreadline found])])
 
 AC_MSG_CHECKING([for libconfig])
 AC_ARG_ENABLE(libconfig,[--enable-libconfig/--disable-libconfig],

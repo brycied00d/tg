@@ -369,8 +369,8 @@ void write_auth_file (void) {
   close (auth_file_fd);
 }
 
-void write_secret_chat (tgl_peer_t *_P, void *extra) {
-  struct tgl_secret_chat *P = (void *)_P;
+void write_secret_chat (tgl_peer_t *PP, void *extra) {
+  struct tgl_secret_chat *P = (void *)PP;
   if (tgl_get_peer_type (P->id) != TGL_PEER_ENCR_CHAT) { return; }
   if (P->state != sc_ok) { return; }
   int *a = extra;
